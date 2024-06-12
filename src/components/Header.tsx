@@ -1,14 +1,16 @@
 import Image from "next/image";
 import NavigationLinks from "./NavigationLinks";
+import MenuButton from "./MenuButton";
 
 export default function Header() {
   return (
-    <header className="bg-green-400">
+    <header className="flex flex-row">
       <Image src={""} alt={"Logo"}></Image>
       <nav>
         <NavigationLinks></NavigationLinks>
       </nav>
-      <button>Menu</button>
+
+      <MenuButton></MenuButton>
     </header>
   );
 }
