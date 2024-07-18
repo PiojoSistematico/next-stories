@@ -4,30 +4,40 @@ const users = [
     name: "Alice",
     email: "alice@mail.com",
     password: "111111",
+    avatar:
+      "https://fastly.picsum.photos/id/1064/200/200.jpg?hmac=xUH-ovzKEHg51S8vchfOZNAOcHB6b1TI_HzthmqvcWU",
   },
   {
     userId: "2",
     name: "Bob",
     email: "bob@mail.com",
     password: "222222",
+    avatar:
+      "https://fastly.picsum.photos/id/625/200/200.jpg?hmac=oIwf4IzbglfXYZo-9VXZTHju2-ox3D-Vooeuioav_nw",
   },
   {
     userId: "3",
     name: "Charlie",
     email: "charlie@mail.com",
     password: "333333",
+    avatar:
+      "https://fastly.picsum.photos/id/90/200/200.jpg?hmac=zltjAmHceKvUbRnvGycGPocNMsLFu-jiTwBEcre1_pU",
   },
   {
     userId: "4",
     name: "Diana",
     email: "diana@mail.com",
     password: "444444",
+    avatar:
+      "https://fastly.picsum.photos/id/912/200/200.jpg?hmac=tYYyMFni6bya5yEVkwmmFekjWGedHVByLtPI5q1lcyw",
   },
   {
     userId: "5",
     name: "Eve",
     email: "eve@mail.com",
     password: "555555",
+    avatar:
+      "https://fastly.picsum.photos/id/423/200/200.jpg?hmac=fXwRSSVHFlYgq9MfObWaWCb_p9L6ysOWda9lLOtAWc0",
   },
 ];
 
@@ -254,6 +264,37 @@ const stories = [
   },
 ];
 
+const tags = [
+  "fantasy",
+  "adventure",
+  "time-travel",
+  "nature",
+  "space",
+  "sci-fi",
+  "legend",
+  "mythology",
+  "horror",
+  "ghosts",
+  "sea",
+  "thriller",
+  "journey",
+  "poetry",
+  "exploration",
+  "mystery",
+  "war",
+  "drama",
+  "future",
+  "memory",
+  "psychological",
+  "romance",
+  "night",
+  "peace",
+  "serenity",
+  "whisper",
+  "time",
+  "eternity",
+];
+
 const comments = [
   {
     commentId: "1",
@@ -381,4 +422,5 @@ module.exports = {
   users,
   stories,
   comments,
+  tags,
 };
