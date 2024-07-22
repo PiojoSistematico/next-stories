@@ -9,7 +9,7 @@ export async function fetchNewStories() {
 
   try {
     // Artificially delay a response for demo purposes.
-    console.log("Fetching revenue data...");
+    console.log("Fetching new stories...");
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Story>`SELECT *
@@ -22,7 +22,52 @@ export async function fetchNewStories() {
     return data.rows;
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch revenue data.");
+    throw new Error("Failed to fetch new stories.");
+  }
+}
+
+export async function fetchTopViewsStories() {
+  noStore();
+
+  try {
+    // Artificially delay a response for demo purposes.
+    console.log("Fetching top views stories...");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const data = await sql<Story>`SELECT *
+      FROM stories
+      ORDER BY views DESC
+      LIMIT 5`;
+
+    console.log("Data fetch completed after 3 seconds.");
+
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch top views stories.");
+  }
+}
+
+export async function fetchTopRatedStories() {
+  noStore();
+
+  try {
+    // Artificially delay a response for demo purposes.
+    console.log("Fetching top rated stories...");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const data =
+      await sql<Story>`SELECT *,(upvotes - downvotes) AS vote_difference
+      FROM stories
+      ORDER BY vote_difference DESC
+      LIMIT 5`;
+
+    console.log("Data fetch completed after 3 seconds.");
+
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch top rated stories.");
   }
 }
 

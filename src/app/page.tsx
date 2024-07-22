@@ -1,29 +1,20 @@
 import Image from "next/image";
-import { fetchNewStories } from "./data/fetch";
+
+import NewStories from "@/components/NewStories";
+
+import TopViewsStories from "@/components/TopViewsStories";
+import TopRatedStories from "@/components/TopRatedStories";
 
 export default async function Home() {
-  const newStories = await fetchNewStories();
-
   return (
-    <main className="">
-      <h1 className={`mb-4 text-xl md:text-2xl`}>Home</h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {/* <Card title="Collected" value={totalPaidInvoices} type="collected" /> */}
-        {/* <Card title="Pending" value={totalPendingInvoices} type="pending" /> */}
-        {/* <Card title="Total Invoices" value={numberOfInvoices} type="invoices" /> */}
-        {/* <Card
-          title="Total Customers"
-          value={numberOfCustomers}
-          type="customers"
-        /> */}
-      </div>
-      <ul className="">
-        {newStories.map((story) => (
-          <li>{story.title}</li>
-        ))}
-        {/* <RevenueChart revenue={revenue}  /> */}
-        {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
-      </ul>
+    <main className="bg-blue-50 p-4 flex flex-col gap-4">
+      <h1 className="text-blue-900 font-bold text-xl">Home</h1>
+
+      <NewStories></NewStories>
+
+      <TopViewsStories></TopViewsStories>
+
+      <TopRatedStories></TopRatedStories>
     </main>
   );
 }

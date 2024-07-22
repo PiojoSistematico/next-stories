@@ -42,13 +42,8 @@ export default function MenuButton() {
           <NavigationMenuList>
             {links.map((link) => {
               return (
-                <NavigationMenuItem>
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    legacyBehavior
-                    passHref
-                  >
+                <NavigationMenuItem key={link.name}>
+                  <Link href={link.href} legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
