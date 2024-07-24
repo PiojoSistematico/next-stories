@@ -1,6 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
-import { Story } from "./definitions";
+import { Story, Tag } from "./definitions";
 
 export async function fetchNewStories() {
   // Add noStore() here to prevent the response from being cached.
@@ -68,6 +68,26 @@ export async function fetchTopRatedStories() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch top rated stories.");
+  }
+}
+
+export async function fetchTags() {
+  noStore();
+
+  try {
+    // Artificially delay a response for demo purposes.
+    console.log("Fetching tags...");
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    const data = await sql<Tag>`SELECT *
+      FROM tags`;
+
+    console.log("Data fetch completed after 3 seconds.");
+
+    return data.rows;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch tags.");
   }
 }
 

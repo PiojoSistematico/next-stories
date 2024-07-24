@@ -26,5 +26,5 @@ export type Comment = {
 };
 
 export type Tag = {
-  tag: string[];
+  tag: string;
 };
