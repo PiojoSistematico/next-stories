@@ -10,14 +10,14 @@ export async function fetchNewStories() {
   try {
     // Artificially delay a response for demo purposes.
     console.log("Fetching new stories...");
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const data = await sql<Story>`SELECT *
       FROM stories
       ORDER BY date DESC
       LIMIT 5`;
 
-    console.log("Data fetch completed after 3 seconds.");
+    console.log("Data fetch (new stories) completed after 1 seconds.");
 
     return data.rows;
   } catch (error) {
@@ -32,14 +32,14 @@ export async function fetchTopViewsStories() {
   try {
     // Artificially delay a response for demo purposes.
     console.log("Fetching top views stories...");
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const data = await sql<Story>`SELECT *
       FROM stories
       ORDER BY views DESC
       LIMIT 5`;
 
-    console.log("Data fetch completed after 3 seconds.");
+    console.log("Data fetch (top views) completed after 2 seconds.");
 
     return data.rows;
   } catch (error) {
@@ -62,7 +62,7 @@ export async function fetchTopRatedStories() {
       ORDER BY vote_difference DESC
       LIMIT 5`;
 
-    console.log("Data fetch completed after 3 seconds.");
+    console.log("Data fetch (top rated) completed after 3 seconds.");
 
     return data.rows;
   } catch (error) {
@@ -77,12 +77,12 @@ export async function fetchTags() {
   try {
     // Artificially delay a response for demo purposes.
     console.log("Fetching tags...");
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const data = await sql<Tag>`SELECT *
       FROM tags`;
 
-    console.log("Data fetch completed after 3 seconds.");
+    console.log("Data fetch (tags) completed after 1 seconds.");
 
     return data.rows;
   } catch (error) {
